@@ -32,6 +32,8 @@
 		<!-- Responsive CSS -->
 		<link rel="stylesheet" href="css/theme-responsive.css" />
 		<script src="js/jquery-1.11.2.js"></script>
+		<script src="js/jquery.maskedinput.min.js"></script>
+		
 
 	</head>
 	<body>
@@ -88,7 +90,7 @@
                                 <div class="row">
                                      <div class="form-group col-sm-7">
                                         <label for="subject">Whatsapp</label>
-                                        <input type="text" id="fone" name="fone" class="form-control required" placeholder="Digite seu Whatsapp" aria-required="true">
+                                        <input type="number" id="fone" name="fone" class="form-control required" placeholder="Digite seu Whatsapp" aria-required="true">
                                     </div>
                                 </div>
 
@@ -147,43 +149,25 @@
 
 		<!-- Custom JS -->
 		<script src="js/custom.js"></script>
-				
-						<script type="text/javascript">
-			function playBeep() {
-		        navigator.notification.vibrate(2000);
-		        navigator.notification.beep(1);
-		    }
-		    function alerta() {
-			    navigator.notification.alert(
-			        'Parabéns, você foi inscrito com sucesso!',
-			        function(){},
-			        'Sorteio!',
-			        'Fechar'
-			    );
-			}
-
-			function selectChange(val) {
-			    if(val == 'Celular') {
-			    	window.open('https://goo.gl/JbgZ7D', '_self');
-			    }else if(val == 'Brinquedos') {
-			    	window.open('https://goo.gl/pVFYY5', '_self');
-			    }else if(val == 'Receptor') {
-			    	window.open('https://goo.gl/CHJhTF', '_self');
-			    }else if(val == 'Drone') {
-			    	window.open('https://goo.gl/Sd6TPt', '_self');
-			    }else if(val == 'Eletronicos') {
-			    	window.open('https://goo.gl/djmhAr', '_self');
-			    }
-			    playBeep();
-			}
-		</script>
-
-		<!-- Custom JS -->
-		<script src="js/custom.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
+
 		<script src="js/index.js"></script>
 
 		<script type="text/javascript">
+
+		function playBeep() {
+	        navigator.notification.vibrate(2000);
+	        navigator.notification.beep(1);
+	    }
+	    function alerta() {
+		    navigator.notification.alert(
+		        'Parabéns, você foi inscrito com sucesso!',
+		        function(){},
+		        'Sorteio!',
+		        'Fechar'
+		    );
+		}
+
 	    $(document).ready(function() {
 	        $("#enviar").click(function() {
 	            var nome = $("#nome").val();
@@ -193,7 +177,7 @@
 	            if ($.trim(nome).length > 0 & $.trim(fone).length > 0) {
 	                $.ajax({
 	                    type: "POST",
-	                    url: "http://creativenegocios.com/fabrica/db/insert.php",
+	                    url: "http://creativenegocios.com/rosadesaron/db/insert.php",
 	                    data: dataString,
 	                    crossDomain: true,
 	                    cache: false,
@@ -218,9 +202,6 @@
 
 	    
     </script>
-				
-		<script type="text/javascript" src="cordova.js"></script>
-		<script src="js/index.js"></script>
 
 	</body>
 </html>
